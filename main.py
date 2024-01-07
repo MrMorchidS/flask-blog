@@ -69,7 +69,6 @@ class Comment(db.Model):
     text = db.Column(db.String(250), nullable=False)
 
 
-
 with app.app_context():
     db.create_all()
 
@@ -175,7 +174,6 @@ def show_post(post_id):
 
     comments = Comment.query.filter_by(post_id=post_id).all()
 
-    
     return render_template("post.html", post=requested_post, comments=comments, form=form)
 
 
